@@ -25,8 +25,19 @@
  *  });
  * ```
  */
+import React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './app';
 
-import './index.css';
-import './app';
+declare global {
+    interface Window {
+        electronAPI: any;
+    }
+}
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+ReactDOM.render(
+    (<React.StrictMode>
+        <App />
+    </React.StrictMode>),
+    document.getElementById('root')
+);

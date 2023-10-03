@@ -1,7 +1,9 @@
-import * as ReactDOM from 'react-dom';
-
-function render() {
-  ReactDOM.render(<h2>Hello from React!</h2>, document.body);
+function App() {
+    return (
+        <div>
+            <button onClick={() => window.electronAPI.getFile()}>Upload File</button>
+        </div>
+    )
 }
 
-render();
+export default App;
